@@ -70,9 +70,9 @@ public class MediaPlayerService extends Service
     private final IBinder iBinder = new LocalBinder();
 
     //List of audio Files
-    private ArrayList<MediaStore.Audio> audioArrayList;
+    private ArrayList<Audio> audioArrayList;
     private int audioIndex = -1;
-    private MediaStore.Audio currentAudio;
+    private Audio currentAudio;
 
     //Handling Audio Calls
     private boolean onGoingCall = false;
@@ -329,7 +329,7 @@ public class MediaPlayerService extends Service
 
         try {
             // Set the data source to the mediaFile location
-            mediaPlayer.setDataSource(activeAudio.getData());
+            mediaPlayer.setDataSource(currentAudio.getData());
         } catch (IOException e) {
             e.printStackTrace();
             stopSelf();
