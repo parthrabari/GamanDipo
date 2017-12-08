@@ -127,7 +127,7 @@ public class MediaPlayerService extends Service
 
         try{
             //Load data from SharedPReference
-            StoraegUtil storage = new StorageUtil(getApplicationContext());
+            StorageUtil storage = new StorageUtil(getApplicationContext());
             audioArrayList = storage.loadAudio();
             audioIndex = storage.loadAudioIndex();
 
@@ -538,11 +538,10 @@ public class MediaPlayerService extends Service
         //update the current metadata
         mediaSession.setMetadata( new MediaMetadataCompat.Builder()
                                     .putBitmap(MediaMetadataCompat.METADATA_KEY_ALBUM_ART,albumArt)
-                                    .putBitmap(MediaMetadataCompat.METADATA_KEY_ARTIST,currentAudio.getArtist()
                                     .putString(MediaMetadataCompat.METADATA_KEY_ARTIST, currentAudio.getArtist())
                                     .putString(MediaMetadataCompat.METADATA_KEY_ALBUM, currentAudio.getAlbum())
                                     .putString(MediaMetadataCompat.METADATA_KEY_TITLE, currentAudio.getTitle())
-                                    .build()));
+                                    .build());
     }
 
     private void buildNotification(int playbackState) {
@@ -563,7 +562,7 @@ public class MediaPlayerService extends Service
         }
 
         Bitmap largeIcon = BitmapFactory.decodeResource(getResources(),
-                R.drawable.image5); //replace with your own image
+                R.drawable.ic_launcher_background); //replace with your own image
 
         //create a new notification
 
